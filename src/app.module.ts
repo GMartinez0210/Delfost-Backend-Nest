@@ -7,7 +7,6 @@ import { DatabaseModule } from './database/database.module';
 
 import { ConfigModule } from '@nestjs/config';
 import { environments } from './environments';
-import Joi from 'joi';
 import config from './config';
 
 @Module({
