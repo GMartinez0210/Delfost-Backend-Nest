@@ -43,7 +43,7 @@ $ npm run test:cov
 
 ## API Reference
 
-#### GET read all the products 
+#### GET => read all the products 
 
 ```http
   GET /products
@@ -51,7 +51,7 @@ $ npm run test:cov
 
 If everything is well processed, it will return an array which contains all the products that the database conected has. If there's not products, it will answer with an empty array. If something wrong happens, it will automatically response throwing an error in 500 Internal Server Error status 
 
-#### GET read a product
+#### GET => read a product
 
 ```http
   GET /product?name=${param}
@@ -63,7 +63,7 @@ If everything is well processed, it will return an object which contains  the pr
 | `name` | `string` | **Required**. Name of product  |
 
 
-#### POST create a product
+#### POST => create a product
 
 ```http
   POST /product
@@ -91,7 +91,7 @@ Brand Object
 
 If everything is well processed, it will create the object and return it showing the values given and adding its _id. If something wrong happens, it will automatically response throwing an error in 500 Internal Server Error status 
 
-#### Update a product
+#### PATCH => update a product
 
 ```http
   PATCH /product
@@ -102,27 +102,27 @@ If everything is well processed, it will create the object and return it showing
 | `name` | `string` | Name of product  |
 | `category` | `object` | Category of product  |
 | `brand` | `object` | Brand of product  |
-| `slug` | `url` | Slug/ image link of product  |
+| `slug` | `url` | Slug/Image link of product  |
 | `status` | `string` | Status of product  |
 
 Category Object
 | Param | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name` | `string` | Name of category  |
-| `status` | `url` | Status of category  |
+| `slug` | `url` | Slug/Image link of category  |
 
 Brand Object
 | Param | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name` | `string` | Name of brand  |
-| `status` | `url` | Status of brand  |
+| `slug` | `url` | Slug/Image link of brand  |
 
 If everything is well processed, it will update the object and return a boolean value. True if it was updated successfully, or false if it couldn't be updated. If something wrong happens, it will automatically response throwing an error in 500 Internal Server Error status 
 
-#### DELETE a product
+#### DELETE => delete a product
 
 ```http
-  PATCH /product
+  DELETE /product
 ```
 | Param | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
