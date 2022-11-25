@@ -10,7 +10,6 @@ import {
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import mongoose from 'mongoose';
 
 @Controller('product')
 export class ProductController {
@@ -22,20 +21,17 @@ export class ProductController {
   }
 
   @Get()
-  findOne(@Query('name') name: string) {
-    return this.productService.findOne(name);
+  findOne(@Query('id') id: string) {
+    return this.productService.findOne(id);
   }
 
   @Patch()
-  update(
-    @Body('id') id: mongoose.Types.ObjectId,
-    @Body() updateProductDto: UpdateProductDto,
-  ) {
+  update(@Body('id') id: string, @Body() updateProductDto: UpdateProductDto) {
     return this.productService.update(id, updateProductDto);
   }
 
   @Delete()
-  remove(@Body('id') id: mongoose.Types.ObjectId) {
+  remove(@Body('id') id: string) {
     return this.productService.remove(id);
   }
 }
