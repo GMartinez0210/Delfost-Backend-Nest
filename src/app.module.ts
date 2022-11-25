@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductsModule } from './products/products.module';
+import { ProductModule } from './product/product.module';
 
 import { DatabaseModule } from './database/database.module';
 
@@ -17,7 +17,7 @@ import config from './config';
       load: [config],
       isGlobal: true,
     }),
-    ProductsModule,
+    ProductModule,
     DatabaseModule,
   ],
   controllers: [AppController],
